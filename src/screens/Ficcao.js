@@ -5,9 +5,8 @@ const Item = (props) => {
   return (
       <View style={styles.card}>
         <Image source={{ uri: props.item.capa }} style={styles.livro} />
-        <Text style={{ color: 'black' }}> {props.item.titulo}</Text>
-        <Text style={{ color: 'black' }}> {props.item.genero}</Text>
-        <Text style={{ fontSize: 15, color: '#5B0FFF' }}>
+        <Text style={{ fontSize: 15, color: 'white' }}> {props.item.titulo}</Text>
+        <Text style={{ padding: 1, fontSize: 17, color: 'lightgreen' }}>
           {' '}
           R$ {props.item.preco.toString()}{' '}
         </Text>
@@ -20,43 +19,37 @@ export default function Ficcao() {
     {
       id: 1,
       capa: 'https://m.media-amazon.com/images/I/51i7kH+rh9L._SX322_BO1,204,203,200_.jpg',
-      titulo: 'É Assim que Acaba: 1',
-      genero: 'Ficção',
+      titulo: '"É Assim que Acaba: 1"',
       preco: 37.7,
     },
     {
       id: 2,
       capa: 'https://m.media-amazon.com/images/I/51jiQtSEwDL._SX327_BO1,204,203,200_.jpg',
-      titulo: 'É assim que começa: 2',
-      genero: 'Ficção',
+      titulo: '"É assim que começa: 2"',
       preco: 10.9,
     },
     {
       id: 3,
       capa: 'https://m.media-amazon.com/images/I/51ABRx3d7GL._SX335_BO1,204,203,200_.jpg',
-      titulo: 'Verity',
-      genero: 'Ficção',
+      titulo: '"Verity"',
       preco: 17.99,
     },
     {
       id: 4,
       capa: 'https://m.media-amazon.com/images/I/51kAYMwbQIL._SX342_BO1,204,203,200_.jpg',
-      titulo: 'A Biblioteca da Meia-Noite',
-      genero: 'Ficção',
+      titulo: '"A Biblioteca"',
       preco: 18.9,
     },
     {
       id: 5,
       capa: 'https://m.media-amazon.com/images/I/41D4d0A2GYL._SX412_BO1,204,203,200_.jpg',
-      titulo: 'A parte que falta',
-      genero: 'Ficção',
+      titulo: '"A parte que falta"',
       preco: 37.99,
     },
     {
       id: 6,
       capa: 'https://m.media-amazon.com/images/I/41P-Id9hzrL._SX362_BO1,204,203,200_.jpg',
-      titulo: 'Telefone sem fio',
-      genero: 'Ficção',
+      titulo: '"Telefone sem fio"',
       preco: 42.39,
     },
   ];
@@ -79,20 +72,20 @@ const styles = StyleSheet.create({
     justfyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
-    backgroundColor: '#B361F5',
+    backgroundColor: '#C4C4C4',
   },
   conteudo: {
     flex: 1,
-    backgroundColor: '#B361F5',
+    backgroundColor: '#C4C4C4',
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: '100%',
   },
   card: {
-    backgroundColor: '#EBB5FF',
+    backgroundColor: '#12568A',
     width: '40%',
-    height: 278,
-    margin: 18,
+    height: 255,
+    margin: 19,
   },
   livro: {
     resizeMode: 'stretch',
