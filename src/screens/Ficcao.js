@@ -20,7 +20,7 @@ export default function Ficcao() {
   const [ ficcoes, setFiccoes ] = useState([])
 
   async function getLivros() {
-    const { data } = await api.get('/livros/')
+    const { data } = await api.get('/livros/?categoria__descricao=Ficção')
     console.log(data)
     setFiccoes(data)
   }

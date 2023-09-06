@@ -20,7 +20,7 @@ export default function Terror() {
   const [ terrores, setTerrores ] = useState([])
 
   async function getLivros() {
-    const { data } = await api.get('/livros/')
+    const { data } = await api.get('/livros/?categoria__descricao=Terror')
     console.log(data)
     setTerrores(data)
   }

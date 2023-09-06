@@ -20,7 +20,7 @@ export default function Romance() {
   const [ romances, setRomances ] = useState([])
 
   async function getLivros() {
-    const { data } = await api.get('/livros/')
+    const { data } = await api.get('/livros/?categoria__descricao=Romance')
     console.log(data)
     setRomances(data)
   }

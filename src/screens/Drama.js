@@ -20,7 +20,7 @@ export default function Drama() {
   const [ dramas, setDramas ] = useState([])
 
   async function getLivros() {
-    const { data } = await api.get('/livros/')
+    const { data } = await api.get('/livros/?categoria__descricao=Drama')
     console.log(data)
     setDramas(data)
   }
