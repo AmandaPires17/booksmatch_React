@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
+import api from '../plugins/api';
 
 const Item = (props) => {
   return (
@@ -15,44 +16,58 @@ const Item = (props) => {
 }
 
 export default function Ficcao() {
-  const ficcoes = [
-    {
-      id: 1,
-      capa: 'https://m.media-amazon.com/images/I/51i7kH+rh9L._SX322_BO1,204,203,200_.jpg',
-      titulo: '"É Assim que Acaba: 1"',
-      preco: 37.7,
-    },
-    {
-      id: 2,
-      capa: 'https://m.media-amazon.com/images/I/51jiQtSEwDL._SX327_BO1,204,203,200_.jpg',
-      titulo: '"É assim que começa: 2"',
-      preco: 10.9,
-    },
-    {
-      id: 3,
-      capa: 'https://m.media-amazon.com/images/I/51ABRx3d7GL._SX335_BO1,204,203,200_.jpg',
-      titulo: '"Verity"',
-      preco: 17.99,
-    },
-    {
-      id: 4,
-      capa: 'https://m.media-amazon.com/images/I/51kAYMwbQIL._SX342_BO1,204,203,200_.jpg',
-      titulo: '"A Biblioteca"',
-      preco: 18.9,
-    },
-    {
-      id: 5,
-      capa: 'https://m.media-amazon.com/images/I/41D4d0A2GYL._SX412_BO1,204,203,200_.jpg',
-      titulo: '"A parte que falta"',
-      preco: 37.99,
-    },
-    {
-      id: 6,
-      capa: 'https://m.media-amazon.com/images/I/41P-Id9hzrL._SX362_BO1,204,203,200_.jpg',
-      titulo: '"Telefone sem fio"',
-      preco: 42.39,
-    },
-  ];
+
+  const [ ficcoes, setFiccoes ] = useState([])
+
+  async function getLivros() {
+    const { data } = await api.get('/livros/')
+    console.log(data)
+    setFiccoes(data)
+  }
+
+  useEffect(() => {
+    getLivros()
+  }, [])
+
+// export default function Ficcao() {
+//   const ficcoes = [
+//     {
+//       id: 1,
+//       capa: 'https://m.media-amazon.com/images/I/51i7kH+rh9L._SX322_BO1,204,203,200_.jpg',
+//       titulo: '"É Assim que Acaba: 1"',
+//       preco: 37.7,
+//     },
+//     {
+//       id: 2,
+//       capa: 'https://m.media-amazon.com/images/I/51jiQtSEwDL._SX327_BO1,204,203,200_.jpg',
+//       titulo: '"É assim que começa: 2"',
+//       preco: 10.9,
+//     },
+//     {
+//       id: 3,
+//       capa: 'https://m.media-amazon.com/images/I/51ABRx3d7GL._SX335_BO1,204,203,200_.jpg',
+//       titulo: '"Verity"',
+//       preco: 17.99,
+//     },
+//     {
+//       id: 4,
+//       capa: 'https://m.media-amazon.com/images/I/51kAYMwbQIL._SX342_BO1,204,203,200_.jpg',
+//       titulo: '"A Biblioteca"',
+//       preco: 18.9,
+//     },
+//     {
+//       id: 5,
+//       capa: 'https://m.media-amazon.com/images/I/41D4d0A2GYL._SX412_BO1,204,203,200_.jpg',
+//       titulo: '"A parte que falta"',
+//       preco: 37.99,
+//     },
+//     {
+//       id: 6,
+//       capa: 'https://m.media-amazon.com/images/I/41P-Id9hzrL._SX362_BO1,204,203,200_.jpg',
+//       titulo: '"Telefone sem fio"',
+//       preco: 42.39,
+//     },
+//   ];
 
   return (
     <View style={styles.container}>
