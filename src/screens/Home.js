@@ -5,18 +5,18 @@ import * as SecureStore from 'expo-secure-store';
 
 import { userState } from '../recoil/atoms/auth';
 
-// import MoviesApi from '../../api/movies';
-// const moviesApi = new MoviesApi();
+// import LivrosApi from '../../api/livros';
+// const livrosApi = new LivrosApi();
 
 export default function HomeScreen() {
   const setUser = useSetRecoilState(userState);
   const currentUserState = useRecoilValue(userState);
-  const [movies, setMovies] = React.useState([]);
+  const [livros, setLivros] = React.useState([]);
 
   React.useEffect(() => {
     const bootstrapAsync = async () => {
-      const data = await moviesApi.getMovies();
-      setMovies(data);
+      const data = await livrosApi.getLivros();
+      setLivros(data);
     };
 
     bootstrapAsync();
@@ -31,14 +31,15 @@ export default function HomeScreen() {
     <View>
       <Text>Hello Home</Text>
       <Text>{currentUserState.access_token}</Text>
-      {movies.map((movie) => (
-        <Text key={movie.id}>
-          {movie.title} - {movie.year}
+      {livros.map((livro) => (
+        <Text key={livro.id}>
+          {livro.title} - {livro.year}
         </Text>
       ))}
       <Button title="Logout" onPress={() => logout()} />
     </View>
   );
+
 }
 
 const styles = StyleSheet.create({
