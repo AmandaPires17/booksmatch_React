@@ -29,50 +29,6 @@ export default function Romance() {
     getLivros()
   }, [])
 
-  // const romances = [
-  //   {
-  //     id: 1,
-  //     capa: 'https://m.media-amazon.com/images/I/518sWR99h1L._SY344_BO1,204,203,200_QL70_ML2_.jpg',
-  //     titulo: '"Eu e esse meu coração"',
-  //     // genero: 'Romance',
-  //     preco: 40.7,
-  //   },
-  //   {
-  //     id: 2,
-  //     capa: 'https://m.media-amazon.com/images/I/41QbyDiPOoL._SY344_BO1,204,203,200_QL70_ML2_.jpg',
-  //     titulo: '"Malibu renasce"',
-  //     // genero: 'Romance',
-  //     preco: 35.9,
-  //   },
-  //   {
-  //     id: 3,
-  //     capa: 'https://m.media-amazon.com/images/I/41lcIvCdcdL._SX335_BO1,204,203,200_.jpg',
-  //     titulo: '"Em outra vida, talvez?"',
-  //     // genero: 'Romance',
-  //     preco: 34.99,
-  //   },
-  //   {
-  //     id: 4,
-  //     capa: 'https://m.media-amazon.com/images/I/51G6wKsK0QL._SY344_BO1,204,203,200_QL70_ML2_.jpg',
-  //     titulo: '"A razão do amor"',
-  //     // genero: 'Romance',
-  //     preco: 18.9,
-  //   },
-  //   {
-  //     id: 5,
-  //     capa: 'https://m.media-amazon.com/images/I/51zbr9-XvRS._SY344_BO1,204,203,200_QL70_ML2_.jpg',
-  //     titulo: '"E não sobrou nenhum"',
-  //     // genero: 'Romance',
-  //     preco: 37.99,
-  //   },
-  //   {
-  //     id: 6,
-  //     capa: 'https://m.media-amazon.com/images/I/41IKTYiymKL._SY344_BO1,204,203,200_QL70_ML2_.jpg',
-  //     titulo: '"Admirável mundo novo"',
-  //     // genero: 'Romance',
-  //     preco: 32.39,
-  //   },
-  // ];
 
   return (
     <View style={styles.container}>
