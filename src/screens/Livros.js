@@ -12,6 +12,8 @@ function Livros ({navigation}) {
     setUser({ loggedIn: false, access_token: null, refresh_token: null });
     await SecureStore.deleteItemAsync('access_token');
   };
+  const { MY_IP } = process.env;
+
 
 
   return  (
@@ -19,7 +21,7 @@ function Livros ({navigation}) {
       <Card style={styles.card}>
         <Card.Content>
           <Button style={styles.button} mode="contained" onPress={() => navigation.navigate('Romance')}>
-            Romance 
+            Romance {MY_IP}
           </Button>
         </Card.Content>
       </Card>

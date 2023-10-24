@@ -13,6 +13,7 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
     "expo": "~49.0.5",
     "expo-secure-store": "~12.3.1",
     "expo-status-bar": "~1.6.0",
@@ -25,7 +26,8 @@
     "recoil": "^0.7.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "babel-plugin-inline-dotenv": "^1.7.0"
   },
   "private": true
 }
